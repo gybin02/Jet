@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'android-aspectjx'
+//apply plugin: 'android-aspectjx'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.jfrog.bintray'
 
 
 android {
+    resourcePrefix "cc_" //随意填写
+
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -41,3 +45,5 @@ dependencies {
     compile 'org.aspectj:aspectjrt:1.8.9'
     
 }
+
+
