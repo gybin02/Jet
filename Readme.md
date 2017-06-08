@@ -1,5 +1,6 @@
 # Jet
 标签注解库；
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)[![ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
 
 使用注解功能 来实现去除一些重复的模板代码，让Code更简单；
 
