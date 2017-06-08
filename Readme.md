@@ -1,12 +1,14 @@
 # Jet
-美柚标签注释库；
+标签注解库；
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
 
 使用注解功能 来实现去除一些重复的模板代码，让Code更简单；
 
-比如 类似 butterknife功能； 
+比如 类似 butterknife功能； 自动初始化Field
 
 命名来自 WordPress的Jetpack;
-![](http://git.meiyou.im/Android/jet/raw/b9e236e11496dd82df86f9af8c7b23d69e8ae1da/image/jetback.jpg)
+![](https://github.com/gybin02/Jet/blob/master/image/jetback.jpg)
 
 每个注解做的事情要很简单，符合kiss原则
 ## 已完成
@@ -186,7 +188,7 @@ You can see this implementation in action in the provided sample.
 
 ###  @JImplement
 
-实现跨module功能调用，类似`Summer`功能；使用Java 动态代理实现；2017.05.23 finish
+实现 根据接口类，自动调用实现类功能，类似`Summer`功能 比Summer简单；只需要一个注释，可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
 
 #### 使用方法：
 接口类
@@ -227,7 +229,10 @@ public class TestImpl {
 ### Download
 ```groovy
 dependencies {
-    compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
+   //内部使用
+   //compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
+   compile 'com.meiyou.framework:jet_library:0.0.2'
+
 }
 ```
 Snapshots of the development version are available in Sonatype's snapshots repository.
@@ -239,21 +244,20 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 *  @JTrycatch  
 
 AspectJ来实现
-安全调用方法：自动加入 try Catch ;
+安全调用方法：给方法 自动加入 try Catch ;
+
+已经实现，参考： [Jet-AOP](http://git.meiyou.im/Android/JetAop) 工程；
 
 *  类似Retrofit的 RestFull 请求库实现；
 @GET， @Post; @Head等； 
 https://github.com/Tamicer/Tamic_Retrofit 
-
-已经实现，参考： [Jet-AOP]（http://git.meiyou.im/Android/JetAop） 工程；
-
 
 ### 常见问题
 * 性能测试；O(1)方法，20个@JFindView 属性初始化，耗时50ms;比直接FindViewById多花5ms,性能损耗基本可以忽略；
 * Fragment实现； 已经支持 2017.0525
 * ViewHolder实现； 已经支持 2017.0525
 * 运行时注入，可以改为 编译时注入
-* 有些注解实现 需要使用AOP技术；可以参考[Jet-AOP]（http://git.meiyou.im/Android/JetAop） 工程；
+* 有些注解实现 需要使用AOP技术；可以参考[Jet-AOP]（http://git.meiyou.im/Android/JetAop) 工程；
 * 
 
 ### License
@@ -271,4 +275,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
