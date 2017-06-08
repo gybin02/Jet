@@ -231,7 +231,7 @@ public class TestImpl {
 dependencies {
    //内部使用
    //compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
-   compile 'com.meiyou.framework:jet_library:0.0.2'
+   compile 'com.meiyou.framework:jet:1.0.0'
 
 }
 ```
