@@ -1,9 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
-  resourcePrefix "cc_" //随意填写
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
@@ -22,6 +20,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -35,46 +40,15 @@ dependencies {
 
 apply from:rootProject.file("mvn.gradle")
 
-version = "0.0.2"
-def siteUrl = 'https://github.com/gybin02/Jet'   // 项目的主页
-def gitUrl = 'git@github.com:gybin02/Jet.git'   // Git仓库的url
-group = "com.meiyou.framework"            // Maven Group ID for the artifact，一般填你唯一的包名
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                // Add your description here
-                name 'This is a lightweight Annotation framework,Can Auto init class field'     //项目的描述 你可以多写一点
-                url siteUrl
-                // Set your license
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id 'Zhengxiaobin'        //填写的一些基本信息
-                        name 'Zhengxiaobin@Meiyou'
-                        email 'gybin02@gmail.com'
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-                }
-            }
-        }
-    }
+publish {
+    userOrg = 'gybin02'      //bintray注册的用户名
+    groupId = 'com.meiyou.framework'         //compile引用时的第1部分groupId
+    artifactId = 'jet'     //compile引用时的第2部分项目名
+    publishVersion = '1.0.0'    //compile引用时的第3部分版本号
+    desc = '使用注解功能 来实现去除一些重复的模板代码，让Code更简单'
+    website = 'https://github.com/gybin02/Jet'
 }
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
+
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
@@ -82,26 +56,6 @@ task javadoc(type: Javadoc) {
     options.encoding "UTF-8"
     options.charSet 'UTF-8'
 }
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "jet"    //发布到JCenter上的项目名字
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
-}
+
+//./gradlew clean build bintrayUpload -PbintrayUser=gybin02 -PbintrayKey=487217a54592ddc6387231fd7e7c0cf869ff3b7b -PdryRun=false
+

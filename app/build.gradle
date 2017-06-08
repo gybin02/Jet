@@ -6,8 +6,6 @@ apply plugin: 'com.android.application'
 
 
 android {
-    resourcePrefix "cc_" //随意填写
-
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -23,6 +21,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 
