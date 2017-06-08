@@ -227,7 +227,10 @@ public class TestImpl {
 ### Download
 ```groovy
 dependencies {
-    compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
+   //内部使用
+   //compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
+   compile 'com.meiyou.framework:jet_library:0.0.2'
+
 }
 ```
 Snapshots of the development version are available in Sonatype's snapshots repository.
