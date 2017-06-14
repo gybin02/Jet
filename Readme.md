@@ -12,7 +12,7 @@
 
 每个注解做的事情要很简单，符合kiss原则
 
-现阶段很轻量级： 放心使用才`28K`
+现阶段很轻量级： 放心使用才 :kissing_heart:	`28K`  :kissing_heart:	
 ## 已完成
 ### @JFindView([ViewId])
 
