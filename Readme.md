@@ -191,7 +191,7 @@ You can see this implementation in action in the provided sample.
 
 ###  @JImplement  :heart_eyes:	 :heart_eyes:	 :heart_eyes:	
 
-实现 根据接口类，自动调用实现类功能，类似`Summer`功能 比Summer简单；只需要一个注释，可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
+实现根据接口类注释，自动调用实现类功能，**代码解耦**必备； 更可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
 
 #### 使用方法：
 接口类
