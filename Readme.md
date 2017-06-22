@@ -11,9 +11,10 @@
 命名来自 WordPress的Jetpack;
 ![](https://github.com/gybin02/Jet/blob/master/image/jetback.jpg)
 
-每个注解做的事情要很简单，符合kiss原则
+- 每个注解做的事情要很简单，符合kiss原则, keep it simple and stupid
+- 现阶段很轻量级： 放心使用才 :heart_eyes:	`28K`  :heart_eyes:	
+- :smile: 如果喜欢，请给个Star:smile:
 
-现阶段很轻量级： 放心使用才 :heart_eyes:	`28K`  :heart_eyes:	
 ## 已完成
 ### @JFindView([ViewId])
 
