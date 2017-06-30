@@ -167,6 +167,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @JOnClick(R.id.btn_jonclick)
     public void onViewClick(View view) {
+        Toast.makeText(this, "onViewClick success", Toast.LENGTH_SHORT).show();
         Log.e(TAG, "onViewClick:");
     }
 

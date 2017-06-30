@@ -3,7 +3,6 @@ package com.seeker.tony.myapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.RequiresPermission;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +70,6 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = View.inflate(context, R.layout.fragment_blank, null);
-//        View viewById = view.findViewById(R.id.btn_findView);
         Jet.bind(this, view);
 
         setListView();
@@ -81,7 +79,7 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
     private void setListView() {
         MyAdapter myAdapter = new MyAdapter();
         listView.setAdapter(myAdapter);
-        listView.setVisibility(View.GONE);
+//        listView.setVisibility(View.GONE);
     }
 
     @Override

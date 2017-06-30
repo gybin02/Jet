@@ -14,6 +14,9 @@ import java.io.Serializable;
 
 @JPermission(value = Manifest.permission.ACCESS_CHECKIN_PROPERTIES, all = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
 public class IntentActivity extends AppCompatActivity {
+
+    private static final String TAG = "IntentActivity";
+    
     @JIntent("stringExtra")
     String stringExtra;
     @JIntent("intExtra")
@@ -44,7 +47,8 @@ public class IntentActivity extends AppCompatActivity {
 //        Bundle bundle = intent.getBundleExtra("bundle");
 //        String[] stringArrays = intent.getStringArrayExtra("stringArray");
 
-        Log.e("intent", "intent test");
+        Log.e(TAG, String.format("stringExtra: %s; intExtra: %s,longExtra: %s",stringExtra,intExtra,longExtra));
+        Log.e(TAG,String.format("booleanExtra: %s, serializable: %s; bundle: %s; stringArrays: %s",booleanExtra,serializable,bundle,stringArrays));
 //        View content = findViewById(R.id.fl_content);
         BlankFragment blankFragment = BlankFragment.newInstance(this);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
