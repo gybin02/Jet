@@ -36,26 +36,27 @@ public class JFindViewOnClickAction extends BaseAction {
 
     private void findView(Activity activity, Field field, View view, Object container) throws IllegalAccessException {
         JFindViewOnClick findViewOnClick = field.getAnnotation(JFindViewOnClick.class);
-        if (findViewOnClick != null) {
-            int value = findViewOnClick.value();
-            View viewById = null;
-            if (activity != null) {
-                viewById = activity.findViewById(value);
-            }
-            if (view != null) {
-                viewById = view.findViewById(value);
-            }
-            if (viewById != null) {
-                if (container instanceof View.OnClickListener) {
-                    viewById.setOnClickListener((View.OnClickListener) container);
-                } else {
-                    Log.w(TAG, "@JFindViewOnClick 需要 Actiity/Fragment 实现 implement View.OnClickListener ");
-                }
-                field.setAccessible(true);
-                field.set(container, viewById);
+        if (findViewOnClick == null) {
+            return;
+        }
+        int value = findViewOnClick.value();
+        View viewById = null;
+        if (activity != null) {
+            viewById = activity.findViewById(value);
+        }
+        if (view != null) {
+            viewById = view.findViewById(value);
+        }
+        if (viewById != null) {
+            if (container instanceof View.OnClickListener) {
+                viewById.setOnClickListener((View.OnClickListener) container);
             } else {
-                Log.w(TAG, String.format("@JFindViewOnClick 找不到View, View= %s  Id=%s ", field.getName(), value));
+                Log.w(TAG, "@JFindViewOnClick 需要 Actiity/Fragment 实现 implement View.OnClickListener ");
             }
+            field.setAccessible(true);
+            field.set(container, viewById);
+        } else {
+            Log.w(TAG, String.format("@JFindViewOnClick 找不到View, View= %s  Id=%s ", field.getName(), value));
         }
     }
 }

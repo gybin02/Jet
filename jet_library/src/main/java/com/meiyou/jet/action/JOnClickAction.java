@@ -19,7 +19,7 @@ public class JOnClickAction extends BaseAction {
     public void run(final Activity activity, final Method method) throws Exception {
         super.run(activity, method);
         JOnClick annotation = method.getAnnotation(JOnClick.class);
-
+        if (annotation == null) return;
         int value = annotation.value();
         doClick(activity, value, method);
 

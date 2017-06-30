@@ -23,6 +23,7 @@ public class JPermissionAction extends BaseAction {
     public void run(final Activity activity, Class<? extends Activity> activityClass) throws Exception {
         super.run(activity, activityClass);
         JPermission annotation = activityClass.getAnnotation(JPermission.class);
+        if (annotation == null) return;
         Method grantMethod = null;
         Method denyMethod = null;
         Method[] methods = activityClass.getDeclaredMethods();
