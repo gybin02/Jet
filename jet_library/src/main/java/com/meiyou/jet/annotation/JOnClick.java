@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 /**
  * 自动findView并设置OnCLick 方法
+ * 方法参数 带有View，会返回点击的View如；
+ * 
+ *  test(View view);
  *
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/6/30
