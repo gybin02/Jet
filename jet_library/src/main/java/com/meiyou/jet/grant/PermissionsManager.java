@@ -24,6 +24,8 @@ import java.util.Set;
  * 方便实现 6.0 以上权限授权,使用单例模式 调用requestPermissionsIfNecessaryForResult
  * 先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
  * A class to help you manage your permissions simply.
+ * 
+ * Manifest.permission.WRITE_EXTERNAL_STORAGE
  *
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 16/10/24 下午6:07

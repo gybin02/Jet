@@ -65,6 +65,14 @@
             android:layout_height="wrap_content"
             android:text="btn_log"
             />
+
+
+        <Button
+            android:id="@+id/btn_jonclick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btn_jonclick"
+            />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

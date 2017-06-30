@@ -1,15 +1,18 @@
 package com.seeker.tony.myapplication;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.meiyou.jet.annotation.JIntent;
+import com.meiyou.jet.annotation.JPermission;
 import com.meiyou.jet.process.Jet;
 
 import java.io.Serializable;
 
+@JPermission(value = Manifest.permission.ACCESS_CHECKIN_PROPERTIES, all = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
 public class IntentActivity extends AppCompatActivity {
     @JIntent("stringExtra")
     String stringExtra;

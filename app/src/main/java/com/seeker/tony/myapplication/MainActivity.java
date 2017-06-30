@@ -1,5 +1,6 @@
 package com.seeker.tony.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,13 +18,16 @@ import com.meiyou.annotation.Test;
 import com.meiyou.jet.annotation.JFindView;
 import com.meiyou.jet.annotation.JFindViewOnClick;
 import com.meiyou.jet.annotation.JLoggable;
+import com.meiyou.jet.annotation.JOnClick;
+import com.meiyou.jet.annotation.JPermission;
 import com.meiyou.jet.process.Jet;
 import com.meiyou.jet.proxy.JetProxy;
 import com.seeker.tony.myapplication.model.TestBean;
 import com.seeker.tony.myapplication.proxy.ITest;
 
+@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private static final String TAG = "MainActivity";
     @JFindView(R.id.btn_findView)
     Button btnHello;
 
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @JFindViewOnClick(R.id.btn_implement)
     Button btn_implement;
-    
+
     @JFindViewOnClick(R.id.btn_log)
     Button btn_log;
 
@@ -160,4 +164,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void testAOP() {
         Log.d("xuyisheng", "testAOP");
     }
+
+    @JOnClick(R.id.btn_jonclick)
+    public void onViewClick(View view) {
+        Log.e(TAG, "onViewClick:");
+    }
+
+
 }
