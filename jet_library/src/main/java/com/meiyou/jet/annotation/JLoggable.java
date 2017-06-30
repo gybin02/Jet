@@ -6,11 +6,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 通过FindViewById绑定View 和自动添加 OnClick功能
- *
+ * 添加注释功能，
+ *不实用，使用Jet_aop替换
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/5/18
  */
+@Deprecated 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JLoggable {

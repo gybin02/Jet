@@ -6,12 +6,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 自动读取Intent里面的值
+ * 自动findView并设置OnCLick 方法
+ *
  * @author zhengxiaobin@xiaoyouzi.com
- * @since 17/5/18
+ * @since 17/6/30
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface JIntent {
-    String value() default "";
+public @interface JOnClick {
+
+    int value() default 0;
+
+    /**
+     * 全部按钮点击
+     *
+     * @return
+     */
+    int[] all() default {};
 }
