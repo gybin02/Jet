@@ -14,6 +14,7 @@ import java.util.Map;
  */
 
 public class JetProxy {
+    private static final String TAG = "JetProxy";
     private static JetProxy instance;
     private Map<Class<?>, Object> mShadowBeanMap = new HashMap<>();
 
@@ -37,6 +38,8 @@ public class JetProxy {
                 T result = (T) Proxy.newProxyInstance(stub.getClassLoader(), new Class[]{stub}, handler);
                 mShadowBeanMap.put(stub, result);
                 return result;
+            }else{
+                android.util.Log.d(TAG, "annotation ==null ,是不是忘了加@JImplement? ");
             }
         } catch (Exception e) {
             e.printStackTrace();

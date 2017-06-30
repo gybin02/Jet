@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
+ * Proxy 方法代理类
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/5/22
  */
