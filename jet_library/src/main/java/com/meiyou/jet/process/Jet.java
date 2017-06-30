@@ -53,8 +53,8 @@ public class Jet {
 
     static {
         actionListType.add(new JOnClickAction());
-        actionListType.add(new JPermissionGrantAction());
-        actionListType.add(new JPermissionDenyAction());
+//        actionListType.add(new JPermissionGrantAction());
+//        actionListType.add(new JPermissionDenyAction());
     }
 
     static {
