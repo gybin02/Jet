@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @JOnClick(R.id.btn_jonclick)
-    public void onViewClick(View view) {
+    public void onViewClick(int i,View v,String arr,String[] dd,int[] dds) {
         Toast.makeText(this, "btn_Jonclick: success", Toast.LENGTH_SHORT).show();
     }
 

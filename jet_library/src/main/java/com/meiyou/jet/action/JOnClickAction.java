@@ -7,6 +7,7 @@ import android.view.View;
 import com.meiyou.jet.annotation.JOnClick;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 
 /**
  * 自动findView并设置OnCLick 方法
@@ -43,8 +44,21 @@ public class JOnClickAction extends BaseAction {
                 public void onClick(View v) {
                     try {
                         method.setAccessible(true);
-                        //TODO 测试 方法参数，不一样的功能
-                        method.invoke(activity, v);
+                        Class<?>[] types = method.getParameterTypes();
+                        ArrayList param = new ArrayList();
+                        for (Class<?> type : types) {
+                            if (type.isAssignableFrom(View.class)) {
+                                param.add(v);
+                            } else if (type.isPrimitive()) { 
+                                addValuePrimitive(param,type);
+//                                param.add(type.newInstance());
+                            } else {
+                                //new Object();
+                                param.add(null);
+                            }
+                        }
+                        //TODO 实现可以接受不同的参数；
+                        method.invoke(activity, param.toArray());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -52,6 +66,30 @@ public class JOnClickAction extends BaseAction {
             });
         }
     }
+
+    /**
+     * 基本类型返回值
+     */
+    private void addValuePrimitive(ArrayList param, Class clazz) {
+        if (clazz.isAssignableFrom(int.class)) {
+            param.add(0);
+        } else if (clazz.isAssignableFrom(byte.class)) {
+            param.add((byte) 0);
+        } else if (clazz.isAssignableFrom(short.class)) {
+            param.add((short) 0);
+        } else if (clazz.isAssignableFrom(long.class)) {
+            param.add(0L);
+        } else if (clazz.isAssignableFrom(float.class)) {
+            param.add(0.0f);
+        } else if (clazz.isAssignableFrom(double.class)) {
+            param.add(0.0d);
+        } else if (clazz.isAssignableFrom(char.class)) {
+            param.add('\u0000');
+        } else if (clazz.isAssignableFrom(boolean.class)) {
+            param.add(false);
+        }
+    }
+    
 
 
 }
