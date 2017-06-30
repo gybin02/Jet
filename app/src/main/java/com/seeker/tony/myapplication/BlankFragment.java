@@ -3,6 +3,7 @@ package com.seeker.tony.myapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.RequiresPermission;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,7 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
         setListView();
         return view;
     }
-
+//    @RequiresPermission()
     private void setListView() {
         MyAdapter myAdapter = new MyAdapter();
         listView.setAdapter(myAdapter);
