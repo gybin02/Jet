@@ -66,6 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 //        btnHello.setOnClickListener(this);
 //        btnWorld.setOnClickListener(this);
+
+        btnHello.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "btn_findView: Success", Toast.LENGTH_SHORT)
+                     .show();
+            }
+        });
     }
 
 
@@ -99,10 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case R.id.btn_findView:
-                Toast.makeText(this, "Btn Hello1", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.btn_findview_onclick:
+                Toast.makeText(MainActivity.this, "btn_findview_onclick: Success", Toast.LENGTH_SHORT)
+                     .show();
                 Toast.makeText(this, "To Intent", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, IntentActivity.class);
                 intent.putExtra("stringExtra", "stringExtra");
@@ -122,25 +129,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_implement:
                 try {
-                    String className = "com.seeker.tony.myapplication.proxy.TestImpl";
-//                    Class<?> clazz = Class.forName(className);
-//                    Object testImpl =  clazz.newInstance();
-//
-//                    ProxyHandler hand = new ProxyHandler(testImpl);
-//                    ITest iTest = (ITest) Proxy.newProxyInstance(testImpl.getClass().getClassLoader(), testImpl.getClass()
-//                            .getInterfaces(), hand);
-//                    iTest.test();
-//                    iTest.getValue();
-
-//                    ProxyMethodHandler handler = new ProxyMethodHandler(className);
-//                    ITest iTest = (ITest) Proxy.newProxyInstance(ITest.class.getClassLoader(), new Class[]{ITest.class}, handler);
-
-//                    iTest.test();
-//                    iTest.getValue();
-
                     ITest iTest = JetProxy.getInstance().create(ITest.class);
                     iTest.test();
-                    iTest.getValue();
+
+                    Toast.makeText(MainActivity.this, "btn_implement: " + iTest.getValue(), Toast.LENGTH_SHORT)
+                         .show();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -167,8 +160,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @JOnClick(R.id.btn_jonclick)
     public void onViewClick(View view) {
-        Toast.makeText(this, "onViewClick success", Toast.LENGTH_SHORT).show();
-        Log.e(TAG, "onViewClick:");
+        Toast.makeText(this, "btn_Jonclick: success", Toast.LENGTH_SHORT).show();
     }
 
 
