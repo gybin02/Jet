@@ -5,5 +5,5 @@ package com.meiyou.jet.action;
  * @since 17/6/30
  */
 
-public class JFindViewAction {
+public class JFindViewAction extends BaseAction{
 }

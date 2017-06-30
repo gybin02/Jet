@@ -1,5 +1,6 @@
 package com.meiyou.jet.action;
 
+import android.app.Activity;
 import android.support.annotation.CallSuper;
 
 /**
@@ -10,8 +11,15 @@ import android.support.annotation.CallSuper;
  */
 
 public class BaseAction {
+
+//    protected Class<? extends Activity> activityClass;
+//
+//    public BaseAction(Class<? extends Activity> activityClass) {
+//        this.activityClass = activityClass;
+//    }
+
     @CallSuper
-    public void run() {
+    public void run(Class<? extends Activity> activityClass) {
 
     }
 }
