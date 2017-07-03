@@ -20,6 +20,8 @@ import com.meiyou.jet.annotation.JFindViewOnClick;
 import com.meiyou.jet.annotation.JLoggable;
 import com.meiyou.jet.annotation.JOnClick;
 import com.meiyou.jet.annotation.JPermission;
+import com.meiyou.jet.annotation.JPermissionDeny;
+import com.meiyou.jet.annotation.JPermissionGrant;
 import com.meiyou.jet.grant.PermissionsManager;
 import com.meiyou.jet.grant.PermissionsResultAction;
 import com.meiyou.jet.process.Jet;
@@ -27,7 +29,8 @@ import com.meiyou.jet.proxy.JetProxy;
 import com.seeker.tony.myapplication.model.TestBean;
 import com.seeker.tony.myapplication.proxy.ITest;
 
-@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+//@JPermission(all = {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_CONTACTS})
+@JPermission(Manifest.permission.CAMERA)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     @JFindView(R.id.btn_findView)
@@ -162,14 +165,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @JOnClick(R.id.btn_jonclick)
-    public void onViewClick(int i,View v,String arr,String[] dd,int[] dds) {
+    public void onViewClick(int i, View v, String arr, String[] dd, int[] dds) {
         Toast.makeText(this, "btn_Jonclick: success", Toast.LENGTH_SHORT).show();
     }
 
 
     private void showPermission() {
 //        Manifest.permission.CAMERA
-        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
+        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
         PermissionsManager.getInstance()
                           .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
                               @Override
@@ -191,6 +194,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
+    }
+
+    @JPermissionGrant
+    private void onGrand() {
+        Toast.makeText(MainActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+             .show();
+    }
+
+    @JPermissionDeny
+    private void onDeny() {
+        Toast.makeText(MainActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
+             .show();
     }
 
 

@@ -9,8 +9,8 @@ import com.meiyou.jet.grant.PermissionsManager;
 import com.meiyou.jet.grant.PermissionsResultAction;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 申请权限
@@ -40,13 +40,13 @@ public class JPermissionAction extends BaseAction {
         }
         String value = annotation.value();
         String[] all = annotation.all();
-        // TODO: 17/6/30 数据新增可能有异常 
-        List<String> list = Arrays.asList(all);
-        list.add(value);
-        String[] result = {};
-        list.toArray(result);
-
-//        Arrays(all,value);
+        // 从数组中创建列表
+        ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(all));
+        arrayList.add(value);
+        //列表转换成一个数组
+        String[] result = new String[arrayList.size()];
+        arrayList.toArray(result);
+        
         final Method finalGrantMethod = grantMethod;
         final Method finalDenyMethod = denyMethod;
         PermissionsManager.getInstance()

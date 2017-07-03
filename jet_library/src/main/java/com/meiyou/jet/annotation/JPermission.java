@@ -6,8 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 申请权限, Activity需要 实现：先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
+ * 申请权限, Activity需要 <br/>
+ * 实现：先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
  * 才能收到授权通知
+ * {@link com.meiyou.jet.grant.PermissionsManager}
  *
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/6/30
@@ -21,7 +23,7 @@ public @interface JPermission {
      * is required. If more than one permission is required, specify either
      * {@link #all()} instead.
      * <p>
-     * If specified, {@link #all()} and {@link #allOf()} must both be null.
+     * If specified, {@link #all()} and {@link #all()} must both be null.
      */
     String value() default "";
 
@@ -32,4 +34,5 @@ public @interface JPermission {
      * If specified, {@link #all()} and {@link #value()} must both be null.
      */
     String[] all() default {};
+    
 }

@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/6/30
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JPermissionGrant {
     /**
