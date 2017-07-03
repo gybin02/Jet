@@ -16,6 +16,21 @@
 - :smile: 如果喜欢，请给个Star:smile:
 
 ## 已完成
+
+| 注解名称        | 作用          | 备注          |
+| ------------- |:-------------:| :-------------:|
+| @JFindView        |等同于findViewById|支持Activity和Fragment       |
+| @JFindViewOnClick    |findViewById（） 和 view.setOnClickListener(this)| Activity需要实现View.onClickListener接口      |
+| @JOnClick        |注解在方法上，view.setOnClickListener|  支持单个View和多个View，方法参数带有View view,则可以返回点击的View     |
+| @JIntent        |用于自动解析Intent 里面的值|       |
+| @JImplement        |用于解耦，根据接口值调用实现|       |
+| @JProvider        |配合JImplement|       |
+| @JPermission        |6.0上自动申请权限；| 支持多个权限       |
+| @JPermissionGrant        | 权限授权成功| 配合    @JPermission  ,非必须  |
+| @JPermissionDeny        |权限授权失败|    配合    @JPermission ，非必须  |
+
+
+
 ### @JFindView([ViewId])
 
 运行时注入，支持 自动初始化 View的findViewById 
@@ -229,6 +244,36 @@ public class TestImpl {
                     iTest.test();
                     iTest.getValue();
 ```
+
+### JPermission  6.0上自动申请权限；
+
+```java
+
+//@JPermission(all = {Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_CONTACTS})
+@JPermission(Manifest.permission.CAMERA)
+public class MainActivity extends AppCompatActivity
+   
+    ....
+   
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
+    }
+
+    @JPermissionGrant
+    private void onGrand() {
+        Toast.makeText(MainActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+             .show();
+    }
+
+    @JPermissionDeny
+    private void onDeny(String permisson) {
+        Toast.makeText(MainActivity.this, "onDenied Success: "+permisson, Toast.LENGTH_SHORT)
+             .show();
+    }
+```
+
 
 ### Download
 ```groovy
