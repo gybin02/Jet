@@ -64,12 +64,6 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         context = this.getActivity();
-        btn_findView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Btn findView", Toast.LENGTH_SHORT).show();    
-            }
-        });
     }
 
     @Override
@@ -79,6 +73,13 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
         Jet.bind(this, view);
 
         setListView();
+        btn_findView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+                Toast.makeText(context, "Btn findView", Toast.LENGTH_SHORT).show();
+            }
+        });
         
         return view;
     }

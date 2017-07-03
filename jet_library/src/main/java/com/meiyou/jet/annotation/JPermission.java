@@ -6,7 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 申请权限
+ * 申请权限, Activity需要 实现：先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
+ * 才能收到授权通知
  *
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/6/30

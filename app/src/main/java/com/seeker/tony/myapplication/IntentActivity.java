@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.meiyou.jet.annotation.JIntent;
+import com.meiyou.jet.annotation.JOnClick;
 import com.meiyou.jet.annotation.JPermission;
+import com.meiyou.jet.grant.PermissionsManager;
+import com.meiyou.jet.grant.PermissionsResultAction;
 import com.meiyou.jet.process.Jet;
 
 import java.io.Serializable;
@@ -16,7 +20,7 @@ import java.io.Serializable;
 public class IntentActivity extends AppCompatActivity {
 
     private static final String TAG = "IntentActivity";
-    
+
     @JIntent("stringExtra")
     String stringExtra;
     @JIntent("intExtra")
@@ -47,12 +51,33 @@ public class IntentActivity extends AppCompatActivity {
 //        Bundle bundle = intent.getBundleExtra("bundle");
 //        String[] stringArrays = intent.getStringArrayExtra("stringArray");
 
-        Log.e(TAG, String.format("stringExtra: %s; intExtra: %s,longExtra: %s",stringExtra,intExtra,longExtra));
-        Log.e(TAG,String.format("booleanExtra: %s, serializable: %s; bundle: %s; stringArrays: %s",booleanExtra,serializable,bundle,stringArrays));
+        Log.e(TAG, String.format("stringExtra: %s; intExtra: %s,longExtra: %s", stringExtra, intExtra, longExtra));
+        Log.e(TAG, String.format("booleanExtra: %s, serializable: %s; bundle: %s; stringArrays: %s", booleanExtra, serializable, bundle, stringArrays));
 //        View content = findViewById(R.id.fl_content);
         BlankFragment blankFragment = BlankFragment.newInstance(this);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.fl_content, blankFragment);
         transaction.commit();
     }
+
+    @JOnClick(R.id.btn_permission)
+    private void showPermission() {
+        String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        PermissionsManager.getInstance()
+                          .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
+                              @Override
+                              public void onGranted() {
+                                  Toast.makeText(IntentActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+                                       .show();
+                              }
+
+                              @Override
+                              public void onDenied(String permission) {
+                                  Toast.makeText(IntentActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
+                                       .show();
+                              }
+                          });
+    }
+
+
 }
