@@ -2,6 +2,7 @@ package com.seeker.tony.myapplication;
 
 import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -145,7 +146,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.btn_log:
-                showPermission();
+                sendIntent();
+//                showPermission();
 //                testLog(10);
 //                testAOP();
                 break;
@@ -206,6 +208,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void onDeny(String permisson) {
         Toast.makeText(MainActivity.this, "onDenied Success: "+permisson, Toast.LENGTH_SHORT)
              .show();
+    }
+    
+    private void sendIntent(){
+        Intent intent=new Intent("android.intent.action.VIEW", Uri.parse("meetyou.linggan:///circles/group"));
+        startActivity(intent);
+        
+//        intent
     }
 
 
