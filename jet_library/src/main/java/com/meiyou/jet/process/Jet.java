@@ -11,8 +11,6 @@ import com.meiyou.jet.action.JFindViewOnClickAction;
 import com.meiyou.jet.action.JIntentAction;
 import com.meiyou.jet.action.JOnClickAction;
 import com.meiyou.jet.action.JPermissionAction;
-import com.meiyou.jet.action.JPermissionDenyAction;
-import com.meiyou.jet.action.JPermissionGrantAction;
 import com.meiyou.jet.wpattern.WPatternField;
 import com.meiyou.jet.wpattern.exception.InjectionException;
 import com.meiyou.jet.wpattern.message.ErrorMessages;
@@ -52,14 +50,14 @@ public class Jet {
 
 
     static {
-        actionListType.add(new JOnClickAction());
+        actionListMethod.add(new JOnClickAction());
 //        actionListType.add(new JPermissionGrantAction());
 //        actionListType.add(new JPermissionDenyAction());
     }
 
     static {
-        actionListMethod.add(new ContentViewAction());
-        actionListMethod.add(new JPermissionAction());
+        actionListType.add(new ContentViewAction());
+        actionListType.add(new JPermissionAction());
     }
 
     /**
@@ -78,7 +76,7 @@ public class Jet {
     }
 
     /**
-     * 支持  注解
+     * Fragment 支持  注解
      *
      * @param fragment
      * @param view
@@ -97,18 +95,18 @@ public class Jet {
             for (Field field : fields) {
 
                 for (BaseAction baseAction : actionList) {
-                    baseAction.run(fragment,field,view);
+                    baseAction.run(fragment, field, view);
                 }
             }
-            
-            
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * 只支持 @JFindView 注解
+     * container 只支持 @JFindView 注解
      *
      * @param container
      * @param view
@@ -119,7 +117,7 @@ public class Jet {
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
                 JFindViewAction action = new JFindViewAction();
-                action.run(container, field,view);
+                action.run(container, field, view);
 //                bindJFindView(field, object, null, view);
             }
         } catch (Exception e) {
@@ -127,17 +125,11 @@ public class Jet {
         }
     }
 
-//    private static void injectField(Object object, View view) throws Exception {
-//
-//    }
-
 
     private static void injectType(Activity activity) throws Exception {
 
-        ArrayList<BaseAction> actionList = new ArrayList<>();
-        actionList.add(new ContentViewAction());
         Class<? extends Activity> activityClass = activity.getClass();
-        for (BaseAction baseAction : actionList) {
+        for (BaseAction baseAction : actionListType) {
             baseAction.run(activityClass);
         }
 
@@ -147,20 +139,15 @@ public class Jet {
         Class<? extends Activity> clazz = activity.getClass();
         Method[] declaredMethods = clazz.getDeclaredMethods();
 
-        ArrayList<BaseAction> actionList = new ArrayList<>();
-        actionList.add(new JOnClickAction());
-        actionList.add(new JPermissionGrantAction());
-        actionList.add(new JPermissionDenyAction());
+//        ArrayList<BaseAction> actionList = new ArrayList<>();
+//        actionList.add(new JOnClickAction());
+//        actionList.add(new JPermissionGrantAction());
+//        actionList.add(new JPermissionDenyAction());
 
         for (Method declaredMethod : declaredMethods) {
-            for (BaseAction baseAction : actionList) {
+            for (BaseAction baseAction : actionListMethod) {
                 baseAction.run(activity, declaredMethod);
             }
-//            JLoggable annotation = declaredMethod.getAnnotation(JLoggable.class);
-//            if (annotation != null) {
-//                declaredMethod.
-            //doSomethind
-//            }
         }
 
     }
@@ -199,23 +186,11 @@ public class Jet {
         Class<? extends Activity> aClass = activity.getClass();
         Field[] declaredFields = aClass.getDeclaredFields();
 
-        ArrayList<BaseAction> actionList = new ArrayList<>();
-        Class<? extends Activity> activityClass = activity.getClass();
-        actionList.add(new JFindViewAction());
-        actionList.add(new JFindViewOnClickAction());
-        actionList.add(new JIntentAction());
-
         for (Field field : declaredFields) {
             try {
-                for (BaseAction baseAction : actionList) {
+                for (BaseAction baseAction : actionListField) {
                     baseAction.run(activity, field);
                 }
-
-//                bindJFindView(field, activity, activity, null);
-//
-//                bindJFindViewOnClick(field, activity, activity, null);
-//
-//                handleIntent(activity, field);
             } catch (Exception e) {
                 e.printStackTrace();
             }
