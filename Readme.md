@@ -1,7 +1,8 @@
 # Jet
-标签注解库；
+轻量级标签注解库；
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
+![Github file size](https://img.shields.io/badge/size-28.0kb-brightgreen.svg)
 
 使用注解功能 来实现去除一些重复的模板代码，让Code更简单；
 
@@ -10,7 +11,10 @@
 命名来自 WordPress的Jetpack;
 ![](https://github.com/gybin02/Jet/blob/master/image/jetback.jpg)
 
-每个注解做的事情要很简单，符合kiss原则
+- 每个注解做的事情要很简单，符合kiss原则, keep it simple and stupid
+- 现阶段很轻量级： 放心使用才 :heart_eyes:	`28K`  :heart_eyes:	
+- :smile: 如果喜欢，请给个Star:smile:
+
 ## 已完成
 ### @JFindView([ViewId])
 
@@ -186,9 +190,9 @@ You can see this implementation in action in the provided sample.
 ```
  
 
-###  @JImplement
+###  @JImplement  :heart_eyes:	 :heart_eyes:	 :heart_eyes:	
 
-实现 根据接口类，自动调用实现类功能，类似`Summer`功能 比Summer简单；只需要一个注释，可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
+实现根据接口类注释，自动调用实现类功能，**代码解耦**必备； 更可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
 
 #### 使用方法：
 接口类
@@ -231,7 +235,7 @@ public class TestImpl {
 dependencies {
    //内部使用
    //compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
-   compile 'com.meiyou.framework:jet_library:0.0.2'
+   compile 'com.meiyou.framework:jet:1.0.0'
 
 }
 ```
@@ -240,6 +244,10 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 ### 待实现，
 
 待实现区域，列了一些我想到的通用功能， 但是项目里面肯定还存在很多通用的功能；欢迎 各位 提Issue，让项目更强大；
+* 权限授权成功或者失败；
+@JPermission
+@JPGrand
+@JPDeny;
 
 *  @JTrycatch  
 
