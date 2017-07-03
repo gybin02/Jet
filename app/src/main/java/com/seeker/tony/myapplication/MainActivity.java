@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.meiyou.annotation.Test;
 import com.meiyou.jet.annotation.JFindView;
 import com.meiyou.jet.annotation.JFindViewOnClick;
 import com.meiyou.jet.annotation.JLoggable;
@@ -101,10 +100,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Test("test")
-    public void test() {
-
-    }
+//    @Test("test")
+//    public void test() {
+//
+//    }
 
     public void onClick(View view) {
         int id = view.getId();
