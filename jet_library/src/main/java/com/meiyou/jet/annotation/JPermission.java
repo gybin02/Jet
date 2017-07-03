@@ -12,6 +12,21 @@ import java.lang.annotation.Target;
  * {@link com.meiyou.jet.grant.PermissionsManager}
  *
  * @author zhengxiaobin@xiaoyouzi.com
+ * @JPermission(Manifest.permission.CAMERA) public class MainActivity extends AppCompatActivity
+ * <p>
+ * <p>
+ * public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+ * super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+ * PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
+ * }
+ * @JPermissionGrant private void onGrand() {
+ * Toast.makeText(MainActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+ * .show();
+ * }
+ * @JPermissionDeny private void onDeny(String permisson) {
+ * Toast.makeText(MainActivity.this, "onDenied Success: "+permisson, Toast.LENGTH_SHORT)
+ * .show();
+ * }
  * @since 17/6/30
  */
 @Target(ElementType.TYPE)
@@ -34,5 +49,5 @@ public @interface JPermission {
      * If specified, {@link #all()} and {@link #value()} must both be null.
      */
     String[] all() default {};
-    
+
 }
