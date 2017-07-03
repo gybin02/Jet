@@ -20,13 +20,14 @@ import java.util.List;
  */
 public class JPermissionAction extends BaseAction {
     @Override
-    public void run(final Activity activity, Class<? extends Activity> activityClass) throws Exception {
-        super.run(activity, activityClass);
-        JPermission annotation = activityClass.getAnnotation(JPermission.class);
+    public void run(final Activity activity) throws Exception {
+        super.run(activity);
+        Class<? extends Activity> clazz = activity.getClass();
+        JPermission annotation = clazz.getAnnotation(JPermission.class);
         if (annotation == null) return;
         Method grantMethod = null;
         Method denyMethod = null;
-        Method[] methods = activityClass.getDeclaredMethods();
+        Method[] methods = clazz.getDeclaredMethods();
         for (Method method : methods) {
             JPermissionGrant grant = method.getAnnotation(JPermissionGrant.class);
             if (grant != null) {

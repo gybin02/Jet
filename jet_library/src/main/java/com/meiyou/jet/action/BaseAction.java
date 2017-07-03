@@ -24,14 +24,14 @@ public class BaseAction {
 //    }
 
     @CallSuper
-    public void run(Class<? extends Activity> activityClass) throws Exception {
+    public void run(Activity activity) throws Exception {
 
     }
 
-    @CallSuper
-    public void run(Activity activity, Class<? extends Activity> activityClass) throws Exception {
-
-    }
+//    @CallSuper
+//    public void run(Activity activity, Class<? extends Activity> activityClass) throws Exception {
+//
+//    }
 
     @CallSuper
     public void run(Activity activity, Method method) throws Exception {

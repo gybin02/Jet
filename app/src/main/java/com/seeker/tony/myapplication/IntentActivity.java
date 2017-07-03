@@ -6,13 +6,10 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.meiyou.jet.annotation.JIntent;
-import com.meiyou.jet.annotation.JOnClick;
 import com.meiyou.jet.annotation.JPermission;
 import com.meiyou.jet.grant.PermissionsManager;
-import com.meiyou.jet.grant.PermissionsResultAction;
 import com.meiyou.jet.process.Jet;
 
 import java.io.Serializable;
@@ -61,25 +58,25 @@ public class IntentActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    @JOnClick(R.id.btn_permission)
-    private void showPermission() {
-//        Manifest.permission.CAMERA
-        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        PermissionsManager.getInstance()
-                          .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
-                              @Override
-                              public void onGranted() {
-                                  Toast.makeText(IntentActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
-                                       .show();
-                              }
-
-                              @Override
-                              public void onDenied(String permission) {
-                                  Toast.makeText(IntentActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
-                                       .show();
-                              }
-                          });
-    }
+//    @JOnClick(R.id.btn_permission)
+//    private void showPermission() {
+////        Manifest.permission.CAMERA
+//        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        PermissionsManager.getInstance()
+//                          .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
+//                              @Override
+//                              public void onGranted() {
+//                                  Toast.makeText(IntentActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+//                                       .show();
+//                              }
+//
+//                              @Override
+//                              public void onDenied(String permission) {
+//                                  Toast.makeText(IntentActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
+//                                       .show();
+//                              }
+//                          });
+//    }
 
 
     @Override

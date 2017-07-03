@@ -127,10 +127,8 @@ public class Jet {
 
 
     private static void injectType(Activity activity) throws Exception {
-
-        Class<? extends Activity> activityClass = activity.getClass();
         for (BaseAction baseAction : actionListType) {
-            baseAction.run(activityClass);
+            baseAction.run(activity);
         }
 
     }

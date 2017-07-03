@@ -16,9 +16,10 @@ public class ContentViewAction extends BaseAction {
 //    }
 
     @Override
-    public void run(Class<? extends Activity> activityClass) throws Exception {
-        super.run(activityClass);
-        ContentView contentView = activityClass.getAnnotation(ContentView.class);
+    public void run(Activity activity) throws Exception {
+        super.run(activity);
+        Class<? extends Activity> clazz = activity.getClass();
+        ContentView contentView = clazz.getAnnotation(ContentView.class);
         if (contentView != null) {
             //doSomethind
         }

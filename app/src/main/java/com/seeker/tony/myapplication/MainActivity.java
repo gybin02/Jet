@@ -19,6 +19,7 @@ import com.meiyou.jet.annotation.JFindView;
 import com.meiyou.jet.annotation.JFindViewOnClick;
 import com.meiyou.jet.annotation.JLoggable;
 import com.meiyou.jet.annotation.JOnClick;
+import com.meiyou.jet.annotation.JPermission;
 import com.meiyou.jet.grant.PermissionsManager;
 import com.meiyou.jet.grant.PermissionsResultAction;
 import com.meiyou.jet.process.Jet;
@@ -26,7 +27,7 @@ import com.meiyou.jet.proxy.JetProxy;
 import com.seeker.tony.myapplication.model.TestBean;
 import com.seeker.tony.myapplication.proxy.ITest;
 
-//@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     @JFindView(R.id.btn_findView)
