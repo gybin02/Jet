@@ -21,11 +21,15 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * 方便实现 6.0 以上权限授权,使用单例模式 调用requestPermissionsIfNecessaryForResult
- * 先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
+ * 方便实现 6.0 以上权限授权,
+ * 1. 使用单例模式;申请权限：调用requestPermissionsIfNecessaryForResult
+ * 2. 先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
+ * 3. 需要在Manifest里面先申请权限：包括普通权限和需要申请的特殊权限。
+ * 4. 所有的权限 Manifest.permission.WRITE_EXTERNAL_STORAGE；
+ * 
  * A class to help you manage your permissions simply.
  * 
- * Manifest.permission.WRITE_EXTERNAL_STORAGE
+ * 
  *https://github.com/anthonycr/Grant
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 16/10/24 下午6:07
