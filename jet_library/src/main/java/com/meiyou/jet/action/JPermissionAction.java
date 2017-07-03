@@ -46,7 +46,7 @@ public class JPermissionAction extends BaseAction {
         //列表转换成一个数组
         String[] result = new String[arrayList.size()];
         arrayList.toArray(result);
-        
+
         final Method finalGrantMethod = grantMethod;
         final Method finalDenyMethod = denyMethod;
         PermissionsManager.getInstance()
@@ -56,7 +56,8 @@ public class JPermissionAction extends BaseAction {
                                   try {
                                       if (finalGrantMethod != null) {
                                           finalGrantMethod.setAccessible(true);
-                                          finalGrantMethod.invoke(activity);
+                                          ArrayList paramList = getMethodDefault(finalGrantMethod);
+                                          finalGrantMethod.invoke(activity, paramList.toArray());
                                       }
                                   } catch (Exception e) {
                                       e.printStackTrace();

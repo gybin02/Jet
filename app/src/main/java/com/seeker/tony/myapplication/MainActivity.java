@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @JPermissionDeny
-    private void onDeny() {
+    private void onDeny(String permisson) {
         Toast.makeText(MainActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
              .show();
     }

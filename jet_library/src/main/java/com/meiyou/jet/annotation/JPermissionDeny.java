@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
  * 配合{@link JPermission}使用，
  * 用户点击 拒绝权限后调用
  * <p>
- * 先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
- *
+ *1.  先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
+ *2.  返回值可以使用 这个方法获得；private void onDeny(String permission)
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/6/30
  */
