@@ -50,8 +50,6 @@
 
 ```java 
            return intent.getStringExtra(value)
-
-           return intent.getCharExtra(value, '\0');
            
            return intent.getCharExtra(value, '\0');
 
@@ -279,7 +277,7 @@ public class MainActivity extends AppCompatActivity
 ```groovy
 dependencies {
    //内部使用
-   //compile 'com.meiyou.framework:jet:0.0.7-SNAPSHOT'
+   //compile 'com.meiyou.framework:jet:0.0.8-SNAPSHOT'
    compile 'com.meiyou.framework:jet:1.0.0'
 
 }
@@ -289,10 +287,6 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 ### 待实现，
 
 待实现区域，列了一些我想到的通用功能， 但是项目里面肯定还存在很多通用的功能；欢迎 各位 提Issue，让项目更强大；
-* 权限授权成功或者失败；
-@JPermission
-@JPGrand
-@JPDeny;
 
 *  @JTrycatch  
 
