@@ -2,6 +2,7 @@ package com.seeker.tony.myapplication;
 
 import android.Manifest;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -62,7 +63,8 @@ public class IntentActivity extends AppCompatActivity {
 
     @JOnClick(R.id.btn_permission)
     private void showPermission() {
-        String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        Manifest.permission.CAMERA
+        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
         PermissionsManager.getInstance()
                           .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
                               @Override
@@ -80,4 +82,9 @@ public class IntentActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
+    }
 }

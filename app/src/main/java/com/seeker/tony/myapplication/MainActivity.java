@@ -3,6 +3,7 @@ package com.seeker.tony.myapplication;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,13 +20,14 @@ import com.meiyou.jet.annotation.JFindView;
 import com.meiyou.jet.annotation.JFindViewOnClick;
 import com.meiyou.jet.annotation.JLoggable;
 import com.meiyou.jet.annotation.JOnClick;
-import com.meiyou.jet.annotation.JPermission;
+import com.meiyou.jet.grant.PermissionsManager;
+import com.meiyou.jet.grant.PermissionsResultAction;
 import com.meiyou.jet.process.Jet;
 import com.meiyou.jet.proxy.JetProxy;
 import com.seeker.tony.myapplication.model.TestBean;
 import com.seeker.tony.myapplication.proxy.ITest;
 
-@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+//@JPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     @JFindView(R.id.btn_findView)
@@ -140,7 +142,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.btn_log:
-                testLog(10);
+                showPermission();
+//                testLog(10);
 //                testAOP();
                 break;
         }
@@ -161,6 +164,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @JOnClick(R.id.btn_jonclick)
     public void onViewClick(int i,View v,String arr,String[] dd,int[] dds) {
         Toast.makeText(this, "btn_Jonclick: success", Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void showPermission() {
+//        Manifest.permission.CAMERA
+        String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
+        PermissionsManager.getInstance()
+                          .requestPermissionsIfNecessaryForResult(this, permission, new PermissionsResultAction() {
+                              @Override
+                              public void onGranted() {
+                                  Toast.makeText(MainActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
+                                       .show();
+                              }
+
+                              @Override
+                              public void onDenied(String permission) {
+                                  Toast.makeText(MainActivity.this, "onDenied Success", Toast.LENGTH_SHORT)
+                                       .show();
+                              }
+                          });
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 
 
