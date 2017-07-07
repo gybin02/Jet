@@ -2,15 +2,17 @@ package com.seeker.tony.myapplication.proxy;
 
 import android.util.Log;
 
+import com.meiyou.jet.annotation.JProvider;
+
 /**
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/5/22
  */
-
+@JProvider
 public class TestImpl {
 
     private static final String TAG = "TestImpl";
-
+    
     public void test() {
         Log.d(TAG, "test Method  invoke");
     }

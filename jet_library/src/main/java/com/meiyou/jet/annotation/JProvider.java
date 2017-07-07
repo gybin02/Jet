@@ -12,6 +12,7 @@ import java.lang.annotation.Target;
  * @since 17/5/23
  */
 @Target(ElementType.TYPE)
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface JProvider {
+    String value() default "";
 }
