@@ -149,6 +149,32 @@
       }
 
 ```
+例子2
+```java
+   //支持从Bundle里面直接取值；
+    @JIntent("param1")
+    private String mParam1;
+    @JIntent("param2")
+    private String mParam2;
+    
+
+    public static BlankFragment newInstance(Activity activity) {
+        BlankFragment fragment = new BlankFragment();
+        Bundle args = new Bundle();
+        String param1 = "Hello ";
+        String param2 = "world";
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Jet.bind(this, getArguments());
+```
 #### NON-ACTIVITY BINDING 
 
 You can also perform binding on arbitrary objects by supplying your own view root.
