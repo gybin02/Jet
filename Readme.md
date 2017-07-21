@@ -12,17 +12,17 @@
 ![](https://github.com/gybin02/Jet/blob/master/image/jetback.jpg)
 
 - 每个注解做的事情要很简单，符合kiss原则, keep it simple and stupid
-- 现阶段很轻量级： 放心使用才 :heart_eyes:	`28K`  :heart_eyes:	
+- 现阶段很轻量级： 放心使用才 :heart_eyes:	:heart_eyes:	
 - :smile: 如果喜欢，请给个Star:smile:
 
 ## 已完成
 
 | 注解名称        | 作用          | 备注          |
 | ------------- |:-------------:| :-------------:|
-| @JFindView        |等同于findViewById|支持Activity和Fragment       |
+| @JFindView        |等同于findViewById|支持Activity和Fragment,ViewHolder等       |
 | @JFindViewOnClick    |findViewById（） 和 view.setOnClickListener(this)| Activity需要实现View.onClickListener接口      |
 | @JOnClick        |注解在方法上，view.setOnClickListener|  支持单个View和多个View，方法参数带有View view,则可以返回点击的View     |
-| @JIntent        |用于自动解析Intent 里面的值|       |
+| @JIntent        |用于自动解析Intent 里面的值| 也可以从Bundle里自动取值      |
 | @JImplement        |用于解耦，根据接口值调用实现|       |
 | @JProvider        |配合JImplement|       |
 | @JPermission        |6.0上自动申请权限；| 支持多个权限       |
@@ -175,7 +175,7 @@
 
         Jet.bind(this, getArguments());
 ```
-#### NON-ACTIVITY BINDING 
+#### 其他类的绑定（NON-ACTIVITY BINDING ）
 
 You can also perform binding on arbitrary objects by supplying your own view root.
 
@@ -231,7 +231,8 @@ You can see this implementation in action in the provided sample.
 
 ###  @JImplement  :heart_eyes:	 :heart_eyes:	 :heart_eyes:	
 
-实现根据接口类注释，自动调用实现类功能，**代码解耦**必备； 更可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；；使用Java 动态代理实现；2017.05.23 finish
+- 实现根据接口类注释，自动调用实现类功能，**代码解耦**必备；替代直接写反射 
+- 更可以用于跨module功能调用，但是不仅于此 更多功能可以自己发掘；
 
 #### 使用方法：
 接口类
@@ -325,10 +326,9 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 
 *  @JTrycatch  
 
-AspectJ来实现
 安全调用方法：给方法 自动加入 try Catch ;
 
-已经实现，参考： [Jet-AOP](http://git.meiyou.im/Android/JetAop) 工程；
+已经实现，使用AspectJ来实现。具体参考： [Jet-AOP](http://git.meiyou.im/Android/JetAop) 工程；
 
 *  类似Retrofit的 RestFull 请求库实现；
 @GET， @Post; @Head等； 
@@ -336,11 +336,8 @@ https://github.com/Tamicer/Tamic_Retrofit
 
 ### 常见问题
 * 性能测试；O(1)方法，20个@JFindView 属性初始化，耗时50ms;比直接FindViewById多花5ms,性能损耗基本可以忽略；
-* Fragment实现； 已经支持 2017.0525
-* ViewHolder实现； 已经支持 2017.0525
-* 运行时注入，可以改为 编译时注入
 * 有些注解实现 需要使用AOP技术；可以参考[Jet-AOP]（http://git.meiyou.im/Android/JetAop) 工程；
-* 
+
 
 ### License
 
