@@ -7,6 +7,9 @@ import java.lang.annotation.Target;
 
 /**
  * 自动读取Intent里面的值
+ * 
+ * 考虑可以加这个： 
+ * Jet新增JMap方法，注入获取Map里面的参数。
  * @author zhengxiaobin@xiaoyouzi.com
  * @since 17/5/18
  */

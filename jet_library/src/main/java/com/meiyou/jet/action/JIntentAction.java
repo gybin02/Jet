@@ -31,6 +31,17 @@ public class JIntentAction extends BaseAction {
 
         }
     }
+    
+
+    public void run(Object container, Field field, Bundle extras) throws Exception {
+        JIntent annotation = field.getAnnotation(JIntent.class);
+        if (annotation != null) {
+            String value = annotation.value();
+            Object result = getValue(field, extras, value);
+            field.setAccessible(true);
+            field.set(container, result);
+        }
+    }
 
 
     /**
@@ -38,47 +49,63 @@ public class JIntentAction extends BaseAction {
      *
      * @param field
      * @param intent
-     * @param value
+     * @param key
      * @return
      */
-    public static Object getValue(Field field, Intent intent, String value) {
+    public static Object getValue(Field field, Intent intent, String key) {
+        Bundle extras = intent.getExtras();
+        return getValue(field, extras, key);
+    }
+
+
+    /**
+     * 从Bundle 获取数据
+     *
+     * @param field  属性类型
+     * @param bundle 数据源
+     * @param key    key
+     * @return
+     */
+    public static Object getValue(Field field, Bundle bundle, String key) {
         Class<?> type = field.getType();
 
         if (type == String.class) {
-            return intent.getStringExtra(value);
+            return bundle.getString(key);
         }
         if (type == Character.class || type == char.class) {
-            return intent.getCharExtra(value, '\0');
+            return bundle.getChar(key, '\0');
         }
         if (type == Byte.class || type == byte.class) {
-            return intent.getByteExtra(value, (byte) 0);
+            return bundle.getByte(key, (byte) 0);
         }
         if (type == Short.class || type == short.class) {
-            return intent.getShortExtra(value, (short) 0);
+            return bundle.getShort(key, (short) 0);
         }
         if (type == Integer.class || type == int.class) {
-            return intent.getIntExtra(value, 0);
+            return bundle.getInt(key, 0);
         }
         if (type == Long.class || type == long.class) {
-            return intent.getLongExtra(value, 0);
+            return bundle.getLong(key, 0);
         }
         if (type == Float.class || type == float.class) {
-            return intent.getFloatExtra(value, 0);
+            return bundle.getFloat(key, 0);
         }
         if (type == Double.class || type == double.class) {
-            return intent.getDoubleExtra(value, 0);
+            return bundle.getDouble(key, 0);
         }
         if (type == Boolean.class || type == boolean.class) {
-            return intent.getBooleanExtra(value, false);
+            return bundle.getBoolean(key, false);
         }
         if (type == Serializable.class) {
-            return intent.getSerializableExtra(value);
+            return bundle.getSerializable(key);
         } else if (type == Bundle.class) {
-            return intent.getBundleExtra(value);
+            return bundle.getBundle(key);
         } else if (type == String[].class) {
-            return intent.getStringArrayExtra(value);
+            return bundle.getStringArray(key);
         } else {
-            return intent.getStringExtra(value);
+            return bundle.getString(key);
         }
     }
+
+
 }

@@ -1,6 +1,7 @@
 package com.meiyou.jet.process;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
@@ -125,6 +126,26 @@ public class Jet {
         }
     }
 
+    /**
+     * 从Bundle里面获取数据放入container
+     *
+     * @param container
+     * @param extras
+     */
+    public static void bind(Object container, Bundle extras) {
+        try {
+            Class<?> clazz = container.getClass();
+            Field[] declaredFields = clazz.getDeclaredFields();
+            for (Field field : declaredFields) {
+                JIntentAction action = new JIntentAction();
+                action.run(container, field, extras);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /******************* Private Part ***********************/
 
     private static void injectType(Activity activity) throws Exception {
         for (BaseAction baseAction : actionListType) {
@@ -242,6 +263,7 @@ public class Jet {
                 (field.getType() != float.class) && (field.getType() != Float.class) &&
                 (field.getType() != Date.class));
     }
+
 
 //    public static void handleFindView(Activity activity, Field field) throws Exception {
 //        JFindView annotation = field.getAnnotation(JFindView.class);

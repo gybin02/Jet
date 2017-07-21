@@ -102,6 +102,10 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    public void setBundle(Bundle extras) {
+        Jet.bind(this,extras);
+    }
+
     private class MyAdapter extends BaseAdapter {
 
         @Override
