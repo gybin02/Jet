@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.meiyou.jet.annotation.JFindView;
 import com.meiyou.jet.annotation.JFindViewOnClick;
+import com.meiyou.jet.annotation.JIntent;
 import com.meiyou.jet.process.Jet;
 
 /**
@@ -38,8 +39,10 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
 
     @JFindView(R.id.listview)
     ListView listView;
-
+    
+    @JIntent("param1")
     private String mParam1;
+    @JIntent("param2")
     private String mParam2;
 
     public BlankFragment() {
@@ -59,10 +62,13 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        Jet.bind(this, getArguments());
+        
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
         context = this.getActivity();
     }
 
@@ -76,14 +82,15 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
         btn_findView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
                 Toast.makeText(context, "Btn findView", Toast.LENGTH_SHORT).show();
             }
         });
-        
+
         return view;
     }
-//    @RequiresPermission()
+
+    //    @RequiresPermission()
     private void setListView() {
         MyAdapter myAdapter = new MyAdapter();
         listView.setAdapter(myAdapter);
@@ -103,7 +110,7 @@ public class BlankFragment extends Fragment implements View.OnClickListener {
     }
 
     public void setBundle(Bundle extras) {
-        Jet.bind(this,extras);
+        Jet.bind(this, extras);
     }
 
     private class MyAdapter extends BaseAdapter {
