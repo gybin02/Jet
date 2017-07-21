@@ -304,8 +304,8 @@ public class MainActivity extends AppCompatActivity
 ```groovy
 dependencies {
    //内部使用
-   //compile 'com.meiyou.framework:jet:0.0.9-SNAPSHOT'
-   compile 'com.meiyou.framework:jet:1.0.0'
+   //compile 'com.meiyou.framework:jet:0.0.10-SNAPSHOT'
+   compile 'com.meiyou.framework:jet:1.5.0'
 
 }
 ```
