@@ -2,11 +2,10 @@
 轻量级标签注解库；
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
-![Github file size](https://img.shields.io/badge/size-28.0kb-brightgreen.svg)
+![Github file size](https://img.shields.io/badge/size-50.0kb-brightgreen.svg)
 
 使用注解功能 来实现去除一些重复的模板代码，让Code更简单；
-
-比如 类似 butterknife功能； 自动初始化Field
+包含 **Butterknife**功能； 自动初始化Activity里面的Field；
 
 命名来自 WordPress的Jetpack;
 ![](https://github.com/gybin02/Jet/blob/master/image/jetback.jpg)
@@ -215,8 +214,10 @@ public class MyAdapter extends BaseAdapter {
   }
 
   static class ViewHolder {
-    @JFindView(R.id.title) TextView name;
-    @JFindView(R.id.job_title) TextView jobTitle;
+    @JFindView(R.id.title)
+    TextView name;
+    @JFindView(R.id.job_title) 
+    TextView jobTitle;
 
     public ViewHolder(View view) {
       Jet.bind(this, view);
@@ -285,14 +286,14 @@ public class MainActivity extends AppCompatActivity
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
-
-    @JPermissionGrant
+    //权限通过回调 （可以不用调用）
+    @JPermissionGrant
     private void onGrand() {
         Toast.makeText(MainActivity.this, "onGrant Success", Toast.LENGTH_SHORT)
              .show();
     }
-
-    @JPermissionDeny
+    //权限拒绝回调（可以不用调用）
+    @JPermissionDeny
     private void onDeny(String permisson) {
         Toast.makeText(MainActivity.this, "onDenied Success: "+permisson, Toast.LENGTH_SHORT)
              .show();
