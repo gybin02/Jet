@@ -4,6 +4,8 @@
 [ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
 ![Github file size](https://img.shields.io/badge/size-50.0kb-brightgreen.svg)
 
+官网： https://gybin02.github.io/Jet/
+
 使用注解功能 来实现去除一些重复的模板代码，让Code更简单；
 包含 **Butterknife**功能； 自动初始化Activity里面的Field；
 
