@@ -341,6 +341,8 @@ https://github.com/Tamicer/Tamic_Retrofit
 * 性能测试；O(1)方法，20个@JFindView 属性初始化，耗时50ms;比直接FindViewById多花5ms,性能损耗基本可以忽略；
 * 有些注解实现 需要使用AOP技术；可以参考[Jet-AOP]（http://git.meiyou.im/Android/JetAop) 工程；
 
+### 交流群：
+ QQ群：547612870 
 
 ### License
 
