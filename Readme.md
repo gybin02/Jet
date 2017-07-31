@@ -247,7 +247,7 @@ public interface ITest {
  ```
 实现类：
 ```java
-//@JProvider 可有可无，只是用来标识实现类，避免被认为是无功能调用被删掉；
+//@JProvider，用来标识实现类，避免被混淆，避免被认为是无功能调用被删掉；
 @JProvider
 public class TestImpl {
 
