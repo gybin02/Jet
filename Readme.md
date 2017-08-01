@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [ ![Download](https://api.bintray.com/packages/gybin02/maven/jet/images/download.svg) ](https://bintray.com/gybin02/maven/jet/_latestVersion)
 ![Github file size](https://img.shields.io/badge/size-50.0kb-brightgreen.svg)
+ [![qq群](https://img.shields.io/badge/QQ%E7%BE%A4-547612870-ff69b4.svg)](http://shang.qq.com/wpa/qunwpa?idkey=f474c19f6b6b7d67e91685511207bcd326a38f50818d8e4569e52a167df85009)
 
 官网： https://gybin02.github.io/Jet/
 
