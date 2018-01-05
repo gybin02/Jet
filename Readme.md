@@ -324,6 +324,18 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 -keep @com.jet.jet.annotation.JProvider class * { *; }
 ```
 
+### Change Log
+
+##### 1.0.0
+- release 包发布；
+
+##### 0.0.10-SNAPSHOT
+- 新增 Grant 权限管理
+
+##### 0.0.9-SNAPSHOT
+- 基础功能
+
+
 ### 待实现，
 
 待实现区域，列了一些我想到的通用功能， 但是项目里面肯定还存在很多通用的功能；欢迎 各位 提Issue，让项目更强大；
