@@ -325,15 +325,7 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 ```
 
 ### Change Log
-
-##### 1.0.0
-- release 包发布；
-
-##### 0.0.10-SNAPSHOT
-- 新增 Grant 权限管理
-
-##### 0.0.9-SNAPSHOT
-- 基础功能
+see：[change log](/changelog.md)
 
 
 ### 待实现，
