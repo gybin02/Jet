@@ -347,7 +347,7 @@ https://github.com/Tamicer/Tamic_Retrofit
 
 ### License
 
-Copyright 2017 zhengxiaobin@xiaoyouzi.com
+Copyright 2017 gybin02@163.com
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
