@@ -10,7 +10,7 @@ import com.meiyou.jet.annotation.JFindView;
 import java.lang.reflect.Field;
 
 /**
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 

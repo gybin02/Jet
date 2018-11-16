@@ -15,7 +15,7 @@ import java.util.Arrays;
 /**
  * 申请权限
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 public class JPermissionAction extends BaseAction {

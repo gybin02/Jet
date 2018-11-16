@@ -1,7 +1,7 @@
 package com.meiyou.jet.action;
 
 /**
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/19
  */
 

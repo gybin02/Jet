@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 通过FindViewById绑定View;
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/18
  */
 

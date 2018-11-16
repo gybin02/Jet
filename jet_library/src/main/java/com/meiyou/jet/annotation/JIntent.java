@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * 
  * 考虑可以加这个： 
  * Jet新增JMap方法，注入获取Map里面的参数。
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/18
  */
 @Target(ElementType.FIELD)

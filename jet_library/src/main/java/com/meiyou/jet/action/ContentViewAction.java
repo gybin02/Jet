@@ -5,7 +5,7 @@ import android.app.Activity;
 import com.meiyou.jet.annotation.ContentView;
 
 /**
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 
