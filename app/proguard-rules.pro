@@ -54,12 +54,12 @@
 -keepattributes Signature  
 -keepattributes EnclosingMethod
 
--keep @interface com.meiyou.jet.annotation.**
+-keep @interface com.jet.jet.annotation.**
 #
-#-keep class com.meiyou.jet.annotation.**{ *; }
--keep @com.meiyou.jet.annotation.JImplement class * { *; }
+#-keep class com.jet.jet.annotation.**{ *; }
+-keep @com.jet.jet.annotation.JImplement class * { *; }
 #
--keep @com.meiyou.jet.annotation.JProvider class * { *; }
+-keep @com.jet.jet.annotation.JProvider class * { *; }
 
 #-keep class com.seeker.tony.myapplication.proxy.TestImpl {*;}
 

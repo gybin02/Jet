@@ -1,4 +1,4 @@
-package com.meiyou.jet.wpattern.exception;
+package com.jet.jet.wpattern.exception;
 
 public class InjectionException extends Exception {
 

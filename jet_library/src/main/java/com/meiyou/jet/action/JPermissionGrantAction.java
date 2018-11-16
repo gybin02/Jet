@@ -1,4 +1,4 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 public class JPermissionGrantAction extends BaseAction {
   

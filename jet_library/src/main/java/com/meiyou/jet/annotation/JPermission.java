@@ -1,4 +1,4 @@
-package com.meiyou.jet.annotation;
+package com.jet.jet.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
  * 申请权限, Activity需要 <br/>
  * 实现：先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
  * 才能收到授权通知
- * {@link com.meiyou.jet.grant.PermissionsManager}
+ * {@link com.jet.jet.grant.PermissionsManager}
  *
  * @author zhengxiaobin
  * @JPermission(Manifest.permission.CAMERA) public class MainActivity extends AppCompatActivity

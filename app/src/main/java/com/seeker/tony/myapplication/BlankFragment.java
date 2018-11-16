@@ -12,10 +12,10 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.meiyou.jet.annotation.JFindView;
-import com.meiyou.jet.annotation.JFindViewOnClick;
-import com.meiyou.jet.annotation.JIntent;
-import com.meiyou.jet.process.Jet;
+import com.jet.jet.annotation.JFindView;
+import com.jet.jet.annotation.JFindViewOnClick;
+import com.jet.jet.annotation.JIntent;
+import com.jet.jet.process.Jet;
 
 /**
  * BLank Fragment

@@ -1,11 +1,11 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.View;
 
-import com.meiyou.jet.annotation.JFindView;
+import com.jet.jet.annotation.JFindView;
 
 import java.lang.reflect.Field;
 

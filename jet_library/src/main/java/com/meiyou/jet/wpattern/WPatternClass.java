@@ -1,4 +1,4 @@
-package com.meiyou.jet.wpattern;
+package com.jet.jet.wpattern;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,6 +1,6 @@
-package com.meiyou.compiler;
+package com.jet.compiler;
 
-import com.meiyou.annotation.Test;
+import com.jet.annotation.Test;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;

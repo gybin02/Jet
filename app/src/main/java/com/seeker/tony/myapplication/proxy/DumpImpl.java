@@ -2,7 +2,7 @@ package com.seeker.tony.myapplication.proxy;
 
 import android.util.Log;
 
-import com.meiyou.jet.annotation.JImplement;
+import com.jet.jet.annotation.JImplement;
 
 /**
  * @author zhengxiaobin

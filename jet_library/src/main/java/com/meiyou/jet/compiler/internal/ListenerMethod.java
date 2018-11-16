@@ -1,5 +1,5 @@
 
-package com.meiyou.jet.compiler.internal;
+package com.jet.jet.compiler.internal;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

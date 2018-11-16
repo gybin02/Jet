@@ -42,7 +42,7 @@ apply from:rootProject.file("mvn.gradle")
 
 publish {
     userOrg = 'gybin02'      //bintray注册的用户名
-    groupId = 'com.meiyou.framework'         //compile引用时的第1部分groupId
+    groupId = 'com.jet.framework'         //compile引用时的第1部分groupId
     artifactId = 'jet'     //compile引用时的第2部分项目名
     publishVersion = '1.5.0'    //compile引用时的第3部分版本号
     desc = '使用注解功能 来实现去除一些重复的模板代码，让Code更简单'

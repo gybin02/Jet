@@ -1,8 +1,8 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 
-import com.meiyou.jet.annotation.ContentView;
+import com.jet.jet.annotation.ContentView;
 
 /**
  * @author zhengxiaobin

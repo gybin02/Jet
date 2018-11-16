@@ -1,7 +1,7 @@
-package com.meiyou.compiler;
+package com.jet.compiler;
 
 import com.google.auto.service.AutoService;
-import com.meiyou.annotation.MethodInfo;
+import com.jet.annotation.MethodInfo;
 
 import java.util.HashMap;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.meiyou.jet.annotation;
+package com.jet.jet.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

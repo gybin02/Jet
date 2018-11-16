@@ -8,10 +8,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.meiyou.jet.annotation.JIntent;
-import com.meiyou.jet.annotation.JPermission;
-import com.meiyou.jet.grant.PermissionsManager;
-import com.meiyou.jet.process.Jet;
+import com.jet.jet.annotation.JIntent;
+import com.jet.jet.annotation.JPermission;
+import com.jet.jet.grant.PermissionsManager;
+import com.jet.jet.process.Jet;
 
 import java.io.Serializable;
 

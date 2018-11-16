@@ -1,6 +1,6 @@
 package com.seeker.tony.myapplication.proxy;
 
-import com.meiyou.jet.annotation.JImplement;
+import com.jet.jet.annotation.JImplement;
 
 /**
  * 测试接口

@@ -1,4 +1,4 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 import android.support.annotation.CallSuper;

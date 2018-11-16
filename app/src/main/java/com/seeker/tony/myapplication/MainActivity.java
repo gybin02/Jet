@@ -16,17 +16,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.meiyou.jet.annotation.JFindView;
-import com.meiyou.jet.annotation.JFindViewOnClick;
-import com.meiyou.jet.annotation.JLoggable;
-import com.meiyou.jet.annotation.JOnClick;
-import com.meiyou.jet.annotation.JPermission;
-import com.meiyou.jet.annotation.JPermissionDeny;
-import com.meiyou.jet.annotation.JPermissionGrant;
-import com.meiyou.jet.grant.PermissionsManager;
-import com.meiyou.jet.grant.PermissionsResultAction;
-import com.meiyou.jet.process.Jet;
-import com.meiyou.jet.proxy.JetProxy;
+import com.jet.jet.annotation.JFindView;
+import com.jet.jet.annotation.JFindViewOnClick;
+import com.jet.jet.annotation.JLoggable;
+import com.jet.jet.annotation.JOnClick;
+import com.jet.jet.annotation.JPermission;
+import com.jet.jet.annotation.JPermissionDeny;
+import com.jet.jet.annotation.JPermissionGrant;
+import com.jet.jet.grant.PermissionsManager;
+import com.jet.jet.grant.PermissionsResultAction;
+import com.jet.jet.process.Jet;
+import com.jet.jet.proxy.JetProxy;
 import com.seeker.tony.myapplication.model.TestBean;
 import com.seeker.tony.myapplication.proxy.ITest;
 

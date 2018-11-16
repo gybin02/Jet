@@ -1,6 +1,6 @@
-package com.meiyou.jet.proxy;
+package com.jet.jet.proxy;
 
-import com.meiyou.jet.annotation.JImplement;
+import com.jet.jet.annotation.JImplement;
 
 import java.lang.reflect.Proxy;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.meiyou.jet.wpattern.message;
+package com.jet.jet.wpattern.message;
 
 public class ErrorMessages {
 

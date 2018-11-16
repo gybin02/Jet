@@ -1,4 +1,4 @@
-package com.meiyou.jet.proxy;
+package com.jet.jet.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

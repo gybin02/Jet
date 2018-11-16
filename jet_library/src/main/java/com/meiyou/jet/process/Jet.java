@@ -1,20 +1,20 @@
-package com.meiyou.jet.process;
+package com.jet.jet.process;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.meiyou.jet.action.BaseAction;
-import com.meiyou.jet.action.ContentViewAction;
-import com.meiyou.jet.action.JFindViewAction;
-import com.meiyou.jet.action.JFindViewOnClickAction;
-import com.meiyou.jet.action.JIntentAction;
-import com.meiyou.jet.action.JOnClickAction;
-import com.meiyou.jet.action.JPermissionAction;
-import com.meiyou.jet.wpattern.WPatternField;
-import com.meiyou.jet.wpattern.exception.InjectionException;
-import com.meiyou.jet.wpattern.message.ErrorMessages;
+import com.jet.jet.action.BaseAction;
+import com.jet.jet.action.ContentViewAction;
+import com.jet.jet.action.JFindViewAction;
+import com.jet.jet.action.JFindViewOnClickAction;
+import com.jet.jet.action.JIntentAction;
+import com.jet.jet.action.JOnClickAction;
+import com.jet.jet.action.JPermissionAction;
+import com.jet.jet.wpattern.WPatternField;
+import com.jet.jet.wpattern.exception.InjectionException;
+import com.jet.jet.wpattern.message.ErrorMessages;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

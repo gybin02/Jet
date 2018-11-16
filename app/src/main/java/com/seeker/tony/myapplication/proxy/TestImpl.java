@@ -2,7 +2,7 @@ package com.seeker.tony.myapplication.proxy;
 
 import android.util.Log;
 
-import com.meiyou.jet.annotation.JProvider;
+import com.jet.jet.annotation.JProvider;
 
 /**
  * @author zhengxiaobin

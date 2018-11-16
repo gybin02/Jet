@@ -1,4 +1,4 @@
-package com.meiyou.jet.compiler;
+package com.jet.jet.compiler;
 
 final class ViewBinding {
 //  private final Id id;

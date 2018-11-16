@@ -1,10 +1,10 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.meiyou.jet.annotation.JIntent;
+import com.jet.jet.annotation.JIntent;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

@@ -1,10 +1,10 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 
-import com.meiyou.jet.annotation.JOnClick;
+import com.jet.jet.annotation.JOnClick;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

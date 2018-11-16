@@ -1,12 +1,12 @@
-package com.meiyou.jet.action;
+package com.jet.jet.action;
 
 import android.app.Activity;
 
-import com.meiyou.jet.annotation.JPermission;
-import com.meiyou.jet.annotation.JPermissionDeny;
-import com.meiyou.jet.annotation.JPermissionGrant;
-import com.meiyou.jet.grant.PermissionsManager;
-import com.meiyou.jet.grant.PermissionsResultAction;
+import com.jet.jet.annotation.JPermission;
+import com.jet.jet.annotation.JPermissionDeny;
+import com.jet.jet.annotation.JPermissionGrant;
+import com.jet.jet.grant.PermissionsManager;
+import com.jet.jet.grant.PermissionsResultAction;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

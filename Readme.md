@@ -308,8 +308,8 @@ public class MainActivity extends AppCompatActivity
 ```groovy
 dependencies {
    //内部使用
-   //compile 'com.meiyou.framework:jet:0.0.10-SNAPSHOT'
-   compile 'com.meiyou.framework:jet:1.5.0'
+   //compile 'com.jet.framework:jet:0.0.10-SNAPSHOT'
+   compile 'com.jet.framework:jet:1.5.0'
 
 }
 ```
@@ -320,8 +320,8 @@ Snapshots of the development version are available in Sonatype's snapshots repos
 #使用JetProxy功能需要避免混淆
 -keepattributes *Annotation*
 -keep class * extends java.lang.annotation.Annotation { *; }
--keep @com.meiyou.jet.annotation.JImplement class * { *; }
--keep @com.meiyou.jet.annotation.JProvider class * { *; }
+-keep @com.jet.jet.annotation.JImplement class * { *; }
+-keep @com.jet.jet.annotation.JProvider class * { *; }
 ```
 
 ### 待实现，
