@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 
  *  test(View view);
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 @Target(ElementType.METHOD)

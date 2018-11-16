@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * 添加注释功能，
  *不实用，使用Jet_aop替换
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/18
  */
 @Deprecated 

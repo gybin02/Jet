@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * <p>
  *1.  先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
  *2.  返回值可以使用 这个方法获得；private void onDeny(String permission)
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 @Target(ElementType.METHOD)

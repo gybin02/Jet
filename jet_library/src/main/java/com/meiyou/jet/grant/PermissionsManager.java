@@ -31,7 +31,7 @@ import java.util.Set;
  * 
  * 
  *https://github.com/anthonycr/Grant
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 16/10/24 下午6:07
  */
 public class PermissionsManager {

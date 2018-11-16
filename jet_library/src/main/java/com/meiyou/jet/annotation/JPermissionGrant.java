@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 
  * 先要在onRequestPermissionsResult 里面 发下通知notifyPermissionsChange
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/6/30
  */
 @Target(ElementType.METHOD)

@@ -5,7 +5,7 @@ import android.util.Log;
 import com.meiyou.jet.annotation.JImplement;
 
 /**
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/22
  */
 @JImplement

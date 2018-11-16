@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * 标识类为JImplement实现类，提示其他人不要删除该类
  * 用于混淆配置
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/23
  */
 //RetentionPolicy.Source；只会存在Java文件中；

@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * 动态代理；
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/19 下午12:11
  */
 

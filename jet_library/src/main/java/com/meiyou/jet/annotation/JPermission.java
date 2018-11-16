@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 才能收到授权通知
  * {@link com.meiyou.jet.grant.PermissionsManager}
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @JPermission(Manifest.permission.CAMERA) public class MainActivity extends AppCompatActivity
  * <p>
  * <p>

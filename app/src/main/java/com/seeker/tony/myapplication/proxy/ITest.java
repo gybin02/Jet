@@ -4,7 +4,7 @@ import com.meiyou.jet.annotation.JImplement;
 
 /**
  * 测试接口
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/22
  */
 

@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Jet 动态代理类
  *
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/22
  */
 

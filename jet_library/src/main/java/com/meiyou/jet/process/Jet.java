@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * @author zhengxiaobin@xiaoyouzi.com
+ * @author zhengxiaobin
  * @since 17/5/18
  */
 
